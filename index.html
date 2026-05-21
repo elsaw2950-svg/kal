@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komputasi Aljabar Linear</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background:#0d1117;
+            color:white;
+            display:flex;
+        }
+
+        /* SIDEBAR */
+        .sidebar{
+            width:300px;
+            height:100vh;
+            background:#111827;
+            padding:20px;
+            overflow-y:auto;
+            position:fixed;
+        }
+
+        .profile img{
+            width:100%;
+            border-radius:10px;
+            margin-bottom:15px;
+        }
+
+        .search{
+            width:100%;
+            padding:10px;
+            border-radius:8px;
+            border:none;
+            background:#1f2937;
+            color:white;
+            margin-bottom:20px;
+        }
+
+        .menu h3{
+            color:#60a5fa;
+            margin-bottom:15px;
+        }
+
+        .menu a{
+            display:block;
+            color:#d1d5db;
+            text-decoration:none;
+            margin:12px 0;
+            transition:0.3s;
+        }
+
+        .menu a:hover{
+            color:#60a5fa;
+            padding-left:5px;
+        }
+
+        /* CONTENT */
+        .content{
+            margin-left:320px;
+            padding:60px;
+            width:100%;
+        }
+
+        .content h1{
+            font-size:50px;
+            margin-bottom:20px;
+        }
+
+        .content p{
+            color:#9ca3af;
+            font-size:18px;
+        }
+
+        .next{
+            margin-top:60px;
+            text-align:right;
+        }
+
+        .next a{
+            color:#60a5fa;
+            text-decoration:none;
+            font-size:20px;
+        }
+
+        footer{
+            margin-top:300px;
+            color:#6b7280;
+            border-top:1px solid #374151;
+            padding-top:20px;
+        }
+
+        @media(max-width:768px){
+
+            body{
+                flex-direction:column;
+            }
+
+            .sidebar{
+                position:relative;
+                width:100%;
+                height:auto;
+            }
+
+            .content{
+                margin-left:0;
+                padding:30px;
+            }
+
+            .content h1{
+                font-size:35px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+
+        <div class="profile">
+            <img src="elsa.jpeg" alt="foto">
+        </div>
+
+        <input type="text" class="search" placeholder="Search">
+
+        <div class="menu">
+            <h3>Komputasi Aljabar Linear</h3>
+
+            <a href="#">SISTEM PERSAMAAN LINIER</a>
+            <a href="#">MENCARI INVERS MATRIX</a>
+            <a href="#">DETERMINAN MATRIX</a>
+            <a href="#">TRANSFORMASI MATRIX</a>
+            <a href="#">DEKOMPOSISI QR</a>
+            <a href="#">EIGEN VALUE</a>
+            <a href="#">VEKTOR DAN MATRIX</a>
+            <a href="#">OPERASI MATRIX</a>
+        </div>
+
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+
+        <h1>Komputasi Aljabar Linear</h1>
+
+        <p>
+            Ini adalah website materi dan catatan
+            komputasi aljabar linear menggunakan HTML dan CSS.
+        </p>
+
+        <div class="next">
+            <a href="#">
+                Next → SISTEM PERSAMAAN LINIER
+            </a>
+        </div>
+
+        <footer>
+            <p>© Copyright 2026 - Elsa Wulan</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
