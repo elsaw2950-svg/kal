@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Determinan dan Invers Matriks</title>
+
+    <style>
+
+        body{
+            background:#0d1117;
+            color:white;
+            font-family:Arial, Helvetica, sans-serif;
+            padding:40px;
+            line-height:1.8;
+        }
+
+        h1{
+            color:#60a5fa;
+            margin-bottom:20px;
+        }
+
+        h2{
+            color:#93c5fd;
+            margin-top:40px;
+            margin-bottom:20px;
+        }
+
+        h3{
+            color:#d1d5db;
+            margin-top:30px;
+            margin-bottom:10px;
+        }
+
+        .box{
+            background:#111827;
+            padding:25px;
+            border-radius:12px;
+            margin-bottom:30px;
+        }
+
+        pre{
+            background:#1f2937;
+            padding:15px;
+            border-radius:10px;
+            overflow:auto;
+            color:#f9fafb;
+        }
+
+        a{
+            color:#60a5fa;
+            text-decoration:none;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <a href="index.html">← Kembali ke Halaman Utama</a>
+
+    <h1>
+        📘 Determinan dan Invers Matriks
+    </h1>
+
+    <p>
+        Menghitung determinan matriks menggunakan
+        metode ekspansi baris dan mencari invers matriks
+        menggunakan metode adjoin.
+    </p>
+
+    <!-- BAGIAN A -->
+    <h2>
+        A. Determinan Matriks dengan Ekspansi Baris
+    </h2>
+
+    <div class="box">
+
+        <h3>Rumus Umum</h3>
+
+<pre>
+det(A) = Σ (-1)^(i+k) × aᵢₖ × Mᵢₖ
+</pre>
+
+    </div>
+
+    <!-- 2x2 -->
+    <div class="box">
+
+        <h3>1. Matriks 2×2</h3>
+
+<pre>
+A = | -7  -5 |
+    |  1   4 |
+</pre>
+
+        <h3>Ekspansi Baris Pertama</h3>
+
+<pre>
+det(A) =
+(-1)^(1+1)(-7)M11 + (-1)^(1+2)(-5)M12
+</pre>
+
+        <h3>Minor</h3>
+
+<pre>
+M11 = 4
+M12 = 1
+</pre>
+
+        <h3>Perhitungan</h3>
+
+<pre>
+= (+1)(-7)(4) + (-1)(-5)(1)
+= -28 + 5
+= -23
+</pre>
+
+        <h3>Hasil</h3>
+
+<pre>
+det(A) = -23
+</pre>
+
+    </div>
+
+    <!-- 3x3 -->
+    <div class="box">
+
+        <h3>2. Matriks 3×3</h3>
+
+<pre>
+A = | 0   2  -3 |
+    | 1  -2  -1 |
+    | 0   0   1 |
+</pre>
+
+        <h3>Ekspansi Baris Pertama</h3>
+
+<pre>
+det(A) =
+(+1)(0)M11 + (-1)(2)M12 + (+1)(-3)M13
+</pre>
+
+        <h3>Minor M11</h3>
+
+<pre>
+| -2  -1 |
+|  0   1 |
+
+= (-2)(১৷) - (-1)(0)
+= -2
+</pre>
+
+<pre>
+Karena dikali 0 maka hasil = 0
+</pre>
+
+        <h3>Minor M12</h3>
+
+<pre>
+| 1  -1 |
+| 0   1 |
+
+= (1)(1) - (-1)(0)
+= 1
+</pre>
+
+<pre>
+(-1)(2)(1) = -2
+</pre>
+
+        <h3>Minor M13</h3>
+
+<pre>
+| 1  -2 |
+| 0   0 |
+
+= (1)(0) - (-2)(0)
+= 0
+</pre>
+
+<pre>
+Karena hasil 0 maka:
+(+1)(-3)(0) = 0
+</pre>
+
+        <h3>Hasil Akhir</h3>
+
+<pre>
+det(A) = 0 - 2 + 0
+det(A) = -2
+</pre>
+
+    </div>
+
+    <!-- 4x4 -->
+    <div class="box">
+
+        <h3>3. Matriks 4×4</h3>
+
+<pre>
+A =
+
+|  1  -3   1   1 |
+| -3   1   1   1 |
+|  1   1  -3   1 |
+|  1   1   1  -3 |
+</pre>
+
+        <h3>Ekspansi Baris Pertama</h3>
+
+<pre>
+det(A) =
+(+1)(1)M11 + (-1)(-3)M12
++ (+1)(1)M13 + (-1)(1)M14
+</pre>
+
+        <h3>Hasil Minor</h3>
+
+<pre>
+M11 = 16
+M12 = -16
+M13 = 16
+M14 = -16
+</pre>
+
+        <h3>Substitusi</h3>
+
+<pre>
+det(A) =
+(1)(16) + (3)(-16)
++ (1)(16) + (-1)(-16)
+
+= 16 - 48 + 16 + 16
+= 0
+</pre>
+
+        <h3>Hasil Akhir</h3>
+
+<pre>
+det(A) = 0
+</pre>
+
+    </div>
+
+    <!-- BAGIAN B -->
+    <h2>
+        B. Invers Matriks dengan Metode Adjoin
+    </h2>
+
+    <div class="box">
+
+        <h3>Rumus</h3>
+
+<pre>
+adj(A)ᵢⱼ = (-1)^(i+j) Mⱼᵢ
+
+A⁻¹ = (1 / det(A)) × adj(A)
+</pre>
+
+    </div>
+
+    <!-- INVERS 2x2 -->
+    <div class="box">
+
+        <h3>4. Matriks 2×2</h3>
+
+<pre>
+A =
+
+| -7  -5 |
+|  1   4 |
+</pre>
+
+        <h3>Determinan</h3>
+
+<pre>
+det(A) =
+(-7)(4) - (-5)(1)
+
+= -28 + 5
+= -23
+</pre>
+
+        <h3>Adjoin</h3>
+
+<pre>
+adj(A) =
+
+|  4   5 |
+| -1  -7 |
+</pre>
+
+        <h3>Invers</h3>
+
+<pre>
+A⁻¹ = (1 / -23)
+
+|  4   5 |
+| -1  -7 |
+</pre>
+
+<pre>
+A⁻¹ =
+
+| -4/23  -5/23 |
+|  1/23   7/23 |
+</pre>
+
+    </div>
+
+    <!-- INVERS 3x3 -->
+    <div class="box">
+
+        <h3>5. Matriks 3×3</h3>
+
+<pre>
+A =
+
+| 0   2  -3 |
+| 1  -2  -1 |
+| 0   0   1 |
+</pre>
+
+        <h3>Determinan</h3>
+
+<pre>
+det(A) = -2
+</pre>
+
+        <h3>Matriks Kofaktor</h3>
+
+<pre>
+C11 = -2
+C12 = -1
+C13 = 0
+
+C21 = -2
+C22 = 0
+C23 = 0
+
+C31 = -8
+C32 = -3
+C33 = -2
+</pre>
+
+        <h3>Adjoin</h3>
+
+<pre>
+adj(A) =
+
+| -2  -2  -8 |
+| -1   0  -3 |
+|  0   0  -2 |
+</pre>
+
+        <h3>Invers</h3>
+
+<pre>
+A⁻¹ = (1 / -2) × adj(A)
+</pre>
+
+<pre>
+A⁻¹ =
+
+| 1    1    4 |
+| 1/2  0   3/2 |
+| 0    0    1 |
+</pre>
+
+    </div>
+
+    <!-- INVERS 4x4 -->
+    <div class="box">
+
+        <h3>6. Matriks 4×4</h3>
+
+<pre>
+A =
+
+|  1  -3   1   1 |
+| -3   1   1   1 |
+|  1   1  -3   1 |
+|  1   1   1  -3 |
+</pre>
+
+        <h3>Determinan</h3>
+
+<pre>
+det(A) = 0
+</pre>
+
+        <h3>Kesimpulan</h3>
+
+<pre>
+Karena det(A) = 0,
+maka matriks tidak memiliki invers
+(tidak invertible).
+</pre>
+
+    </div>
+
+</body>
+</html>

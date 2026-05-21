@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matriks Transformasi Translasi</title>
+
+  <!-- MathJax -->
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+      background:#0d1117;
+      color:white;
+      padding:40px;
+      line-height:1.8;
+    }
+
+    h1,h2{
+      color:#ffffff;
+      margin-top:40px;
+    }
+
+    .box{
+      background:#161b22;
+      border:1px solid #30363d;
+      padding:25px;
+      border-radius:10px;
+      margin-top:20px;
+    }
+
+    .math{
+      text-align:center;
+      overflow-x:auto;
+      margin:20px 0;
+      font-size:22px;
+    }
+
+    hr{
+      border:0;
+      border-top:1px solid #30363d;
+      margin:40px 0;
+    }
+
+    p{
+      margin:10px 0;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Matriks Transformasi dari Grafik</h1>
+
+<div class="box">
+  <h2>Konsep Translasi</h2>
+
+  <p>
+    Transformasi translasi memindahkan titik:
+  </p>
+
+  <div class="math">
+    \[
+    (x,y) \rightarrow (x+a,\; y+b)
+    \]
+  </div>
+
+  <p>
+    Bentuk matriks homogen:
+  </p>
+
+  <div class="math">
+    \[
+    T(a,b)=
+    \begin{bmatrix}
+    1 & 0 & a\\
+    0 & 1 & b\\
+    0 & 0 & 1
+    \end{bmatrix}
+    \]
+  </div>
+</div>
+
+<hr>
+
+<div class="box">
+  <h2>1. Transformasi A → B</h2>
+
+  <p>Diketahui translasi:</p>
+
+  <div class="math">
+    \[
+    A \rightarrow B = (0,-2)
+    \]
+  </div>
+
+  <p><b>Langkah:</b></p>
+
+  <p>Vektor Translasi:</p>
+
+  <div class="math">
+    \[
+    \begin{bmatrix}
+    0\\
+    -2
+    \end{bmatrix}
+    \]
+  </div>
+
+  <p>Matriks Transformasi:</p>
+
+  <div class="math">
+    \[
+    T_{AB}=
+    \begin{bmatrix}
+    1 & 0 & 0\\
+    0 & 1 & -2\\
+    0 & 0 & 1
+    \end{bmatrix}
+    \]
+  </div>
+
+  <p>Verifikasi:</p>
+
+  <div class="math">
+    \[
+    \begin{bmatrix}
+    x'\\
+    y'\\
+    1
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+    1 & 0 & 0\\
+    0 & 1 & -2\\
+    0 & 0 & 1
+    \end{bmatrix}
+    \begin{bmatrix}
+    x\\
+    y\\
+    1
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+    x\\
+    y-2\\
+    1
+    \end{bmatrix}
+    \]
+  </div>
+</div>
+
+<hr>
+
+<div class="box">
+  <h2>2. Transformasi B → C</h2>
+
+  <p>Diketahui translasi:</p>
+
+  <div class="math">
+    \[
+    B \rightarrow C = (2,0)
+    \]
+  </div>
+
+  <p><b>Langkah:</b></p>
+
+  <p>Vektor Translasi:</p>
+
+  <div class="math">
+    \[
+    \begin{bmatrix}
+    2\\
+    0
+    \end{bmatrix}
+    \]
+  </div>
+
+  <p>Matriks Transformasi:</p>
+
+  <div class="math">
+    \[
+    T_{BC}=
+    \begin{bmatrix}
+    1 & 0 & 2\\
+    0 & 1 & 0\\
+    0 & 0 & 1
+    \end{bmatrix}
+    \]
+  </div>
+
+  <p>Verifikasi:</p>
+
+  <div class="math">
+    \[
+    \begin{bmatrix}
+    x'\\
+    y'\\
+    1
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+    1 & 0 & 2\\
+    0 & 1 & 0\\
+    0 & 0 & 1
+    \end{bmatrix}
+    \begin{bmatrix}
+    x\\
+    y\\
+    1
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+    x+2\\
+    y\\
+    1
+    \end{bmatrix}
+    \]
+  </div>
+</div>
+
+<hr>
+
+<div class="box">
+  <h2>3. Transformasi D → E</h2>
+
+  <p>Diketahui translasi:</p>
+
+  <div class="math">
+    \[
+    D \rightarrow E = (0,-4)
+    \]
+  </div>
+
+  <p><b>Langkah:</b></p>
+
+  <p>Vektor Translasi:</p>
+
+  <div class="math">
+    \[
+    \begin{bmatrix}
+    0\\
+    -4
+    \end{bmatrix}
+    \]
+  </div>
+
+  <p>Matriks Transformasi:</p>
+
+  <div class="math">
+    \[
+    T_{DE}=
+    \begin{bmatrix}
+    1 & 0 & 0\\
+    0 & 1 & -4\\
+    0 & 0 & 1
+    \end{bmatrix}
+    \]
+  </div>
+
+  <p>Verifikasi:</p>
+
+  <div class="math">
+    \[
+    \begin{bmatrix}
+    x'\\
+    y'\\
+    1
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+    1 & 0 & 0\\
+    0 & 1 & -4\\
+    0 & 0 & 1
+    \end{bmatrix}
+    \begin{bmatrix}
+    x\\
+    y\\
+    1
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+    x\\
+    y-4\\
+    1
+    \end{bmatrix}
+    \]
+  </div>
+</div>
+
+<hr>
+
+<div class="box">
+  <h2>4. Transformasi E → F</h2>
+
+  <p>Diketahui translasi:</p>
+
+  <div class="math">
+    \[
+    E \rightarrow F = (2,0)
+    \]
+  </div>
+
+  <p><b>Langkah:</b></p>
+
+  <p>Vektor Translasi:</p>
+
+  <div class="math">
+    \[
+    \begin{bmatrix}
+    2\\
+    0
+    \end{bmatrix}
+    \]
+  </div>
+
+  <p>Matriks Transformasi:</p>
+
+  <div class="math">
+    \[
+    T_{EF}=
+    \begin{bmatrix}
+    1 & 0 & 2\\
+    0 & 1 & 0\\
+    0 & 0 & 1
+    \end{bmatrix}
+    \]
+  </div>
+
+  <p>Verifikasi:</p>
+
+  <div class="math">
+    \[
+    \begin{bmatrix}
+    x'\\
+    y'\\
+    1
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+    1 & 0 & 2\\
+    0 & 1 & 0\\
+    0 & 0 & 1
+    \end{bmatrix}
+    \begin{bmatrix}
+    x\\
+    y\\
+    1
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+    x+2\\
+    y\\
+    1
+    \end{bmatrix}
+    \]
+  </div>
+</div>
+
+</body>
+</html>

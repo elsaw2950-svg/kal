@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminasi Gaussian</title>
+
+    <style>
+
+        body{
+            background:#0d1117;
+            color:white;
+            font-family:Arial, Helvetica, sans-serif;
+            padding:40px;
+            line-height:1.8;
+        }
+
+        h1{
+            color:#60a5fa;
+            margin-bottom:20px;
+        }
+
+        h2{
+            color:#93c5fd;
+            margin-top:40px;
+            margin-bottom:10px;
+        }
+
+        h3{
+            color:#d1d5db;
+            margin-top:25px;
+        }
+
+        .box{
+            background:#111827;
+            padding:20px;
+            border-radius:10px;
+            margin-top:15px;
+        }
+
+        pre{
+            background:#1f2937;
+            padding:15px;
+            border-radius:10px;
+            overflow:auto;
+            color:#f9fafb;
+        }
+
+        a{
+            color:#60a5fa;
+            text-decoration:none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <a href="index.html">← Kembali ke Halaman Utama</a>
+
+    <h1>📘 Eliminasi Gaussian</h1>
+
+    <p>
+        Penyelesaian Sistem Persamaan Linier 3 Variabel
+        dan 4 Variabel menggunakan metode Eliminasi Gaussian.
+    </p>
+
+    <!-- SPLTV -->
+    <h2>A. Sistem Persamaan Linier Tiga Variabel</h2>
+
+    <div class="box">
+
+        <h3>1. Sistem Persamaan</h3>
+
+<pre>
+x + y + z = 6
+2x + 3y + z = 10
+x - y + 2z = 5
+</pre>
+
+        <h3>2. Matriks Augmented</h3>
+
+<pre>
+| 1  1  1 |  6 |
+| 2  3  1 | 10 |
+| 1 -1  2 |  5 |
+</pre>
+
+        <h3>3. Eliminasi Gaussian</h3>
+
+        <p><b>Langkah 1</b></p>
+
+<pre>
+R2 → R2 - 2R1
+R3 → R3 - R1
+</pre>
+
+<pre>
+| 1  1  1 |  6 |
+| 0  1 -1 | -2 |
+| 0 -2  1 | -1 |
+</pre>
+
+        <p><b>Langkah 2</b></p>
+
+<pre>
+R3 → R3 + 2R2
+</pre>
+
+<pre>
+| 1  1  1 |  6 |
+| 0  1 -1 | -2 |
+| 0  0 -1 | -5 |
+</pre>
+
+        <h3>4. Substitusi Balik</h3>
+
+<pre>
+-z = -5
+z = 5
+
+y - z = -2
+y - 5 = -2
+y = 3
+
+x + y + z = 6
+x + 3 + 5 = 6
+x = -2
+</pre>
+
+        <p>
+            Jadi diperoleh:
+        </p>
+
+<pre>
+x = -2
+y = 3
+z = 5
+</pre>
+
+    </div>
+
+    <!-- SPL EMPAT VARIABEL -->
+    <h2>B. Sistem Persamaan Linier Empat Variabel</h2>
+
+    <div class="box">
+
+        <h3>1. Sistem Persamaan</h3>
+
+<pre>
+x + y + z + w = 10
+2x + y - z + w = 5
+x - y + 2z + 3w = 15
+3x + 2y + z - w = 8
+</pre>
+
+        <h3>2. Matriks Augmented</h3>
+
+<pre>
+| 1  1  1  1 | 10 |
+| 2  1 -1  1 |  5 |
+| 1 -1  2  3 | 15 |
+| 3  2  1 -1 |  8 |
+</pre>
+
+        <h3>3. Eliminasi Gaussian</h3>
+
+        <p><b>Langkah 1</b></p>
+
+<pre>
+R2 → R2 - 2R1
+R3 → R3 - R1
+R4 → R4 - 3R1
+</pre>
+
+<pre>
+| 1  1  1   1 | 10 |
+| 0 -1 -3  -1 | -15 |
+| 0 -2  1   2 | 5 |
+| 0 -1 -2  -4 | -22 |
+</pre>
+
+        <p><b>Langkah 2</b></p>
+
+<pre>
+R3 → R3 - 2R2
+R4 → R4 - R2
+</pre>
+
+<pre>
+| 1  1   1   1 | 10 |
+| 0 -1  -3  -1 | -15 |
+| 0  0   7   4 | 35 |
+| 0  0   1  -3 | -7 |
+</pre>
+
+        <p><b>Langkah 3</b></p>
+
+<pre>
+R4 → 7R4 - R3
+</pre>
+
+<pre>
+| 1  1   1    1 | 10 |
+| 0 -1  -3   -1 | -15 |
+| 0  0   7    4 | 35 |
+| 0  0   0  -25 | -84 |
+</pre>
+
+        <h3>4. Substitusi Balik</h3>
+
+<pre>
+-25w = -84
+w = 3.36
+
+7z + 4w = 35
+7z + 13.44 = 35
+z = 3.08
+
+-y - 3z - w = -15
+y = 2.4
+
+x + y + z + w = 10
+x = 1.16
+</pre>
+
+        <p>Jadi diperoleh:</p>
+
+<pre>
+x = 1.16
+y = 2.4
+z = 3.08
+w = 3.36
+</pre>
+
+    </div>
+
+</body>
+</html>
