@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komputasi SVD NumPy Interaktif</title>
+    
+    <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+    
+    <script>
+    sagecell.makeSagecell({
+        inputLocation: '.python-svd',
+        languages: ['python'], // Mengubah bahasa ke Python agar NumPy bisa berjalan
+        evalButtonText: 'Hitung SVD',
+        autoeval: false // Atur ke true jika ingin kode langsung berjalan saat halaman dimuat
+    });
+    </script>
+    
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #eceff1;
+            padding-bottom: 10px;
+        }
+        .instruksi {
+            background-color: #e3f2fd;
+            border-left: 5px solid #2196f3;
+            padding: 10px 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Kalkulator Singular Value Decomposition (SVD)</h2>
+    
+    <div class="instruksi">
+        <p><strong>Petunjuk:</strong> Anda dapat mengubah angka elemen matriks <code>A</code> di dalam kotak kode di bawah ini secara langsung, lalu klik tombol <strong>"Hitung SVD"</strong> untuk melihat hasil dekomposisi dan rekonstruksinya.</p>
+    </div>
+
+    <div class="python-svd">
+        <textarea style="width: 100%; height: 420px;">
+import numpy as np
+
+# Matriks 3x3 yang akan didekomposisi
+A = np.array([
+    [4, 1, 1],
+    [-1, 3, 1],
+    [1, 5, 2]
+], dtype=float)
+
+# Melakukan Singular Value Decomposition
+U, S, VT = np.linalg.svd(A)
+
+# Mengubah singular values (array 1D) menjadi matriks diagonal 3x3
+Sigma = np.diag(S)
+
+# Menampilkan Hasil Komputasi
+print("=== MATRIKS U ===")
+print(np.round(U, 4))
+
+print("\n=== MATRIKS SIGMA (Σ) ===")
+print(np.round(Sigma, 4))
+
+print("\n=== MATRIKS V^T ===")
+print(np.round(VT, 4))
+
+print("\n" + "="*40)
+# Verifikasi perkalian rekonstruksi A = U @ Sigma @ VT
+A_rekonstruksi = U @ Sigma @ VT
+
+print("\n=== HASIL REKONSTRUKSI (U @ Sigma @ V^T) ===")
+print(np.round(A_rekonstruksi, 4))
+
+print("\n=== MATRIKS A ASLI ===")
+print(A)
+        </textarea>
+    </div>
+
+</body>
+</html>
