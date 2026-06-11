@@ -2,156 +2,199 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Eliminasi Gaussian</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tugas Eliminasi Gauss</title>
+
 <style>
-    body {
-        margin: 0;
-        font-family: "Segoe UI", Arial, sans-serif;
-        background-color: #0f1117;
-        color: #eaeaea;
-        line-height: 1.6;
-    }
+body{
+    font-family: Arial, sans-serif;
+    background:#0d1117;
+    color:white;
+    padding:40px;
+    line-height:1.8;
+}
 
-    .container {
-        max-width: 900px;
-        margin: auto;
-        padding: 40px 20px;
-    }
+.container{
+    max-width:1000px;
+    margin:auto;
+}
 
-    h1 {
-        font-size: 32px;
-        margin-bottom: 5px;
-    }
+h1{
+    text-align:center;
+    color:#58a6ff;
+}
 
-    h2 {
-        margin-top: 40px;
-        border-left: 5px solid #3fa9f5;
-        padding-left: 15px;
-    }
+h2{
+    color:#58a6ff;
+    margin-top:30px;
+}
 
-    h3 {
-        margin-top: 30px;
-    }
+.box{
+    background:#161b22;
+    padding:15px;
+    border-radius:8px;
+    margin:15px 0;
+    border-left:5px solid #58a6ff;
+}
 
-    .sub {
-        color: #aaa;
-        font-size: 14px;
-    }
+.operasi{
+    background:#21262d;
+    padding:15px;
+    border-radius:8px;
+    margin:15px 0;
+    font-family:Consolas;
+}
 
-    .math {
-        text-align: center;
-        margin: 20px 0;
-        font-size: 18px;
-    }
-
-    .box-code {
-        background: #1b1f2a;
-        border: 1px solid #333;
-        border-radius: 6px;
-        padding: 15px;
-        margin: 15px 0;
-        font-family: "Consolas", monospace;
-        font-size: 14px;
-        overflow-x: auto;
-    }
-
-    .box-result {
-        background: #000;
-        border-left: 5px solid #3fa9f5;
-        padding: 15px;
-        margin: 15px 0;
-        font-family: "Consolas", monospace;
-        font-size: 15px;
-        text-align: center;
-    }
-
-    ul {
-        margin-top: 10px;
-    }
-
-    footer {
-        margin-top: 60px;
-        text-align: center;
-        font-size: 13px;
-        color: #888;
-    }
+.kesimpulan{
+    background:#161b22;
+    padding:20px;
+    border-left:5px solid #3fb950;
+    border-radius:8px;
+}
 </style>
-</head>
 
+</head>
 <body>
+
 <div class="container">
 
-    <h1>Eliminasi Gaussian</h1>
-    <p class="sub">Penyelesaian Sistem Persamaan Linier 3 dan 4 Variabel</p>
+<h1>Tugas Eliminasi (3)</h1>
 
-    <h2>1. Sistem Persamaan</h2>
+<h2>1. SPL (Sistem Persamaan Linear)</h2>
 
-    <div class="math">
-        x + y + z + w = 10<br>
-        2x + y + z + w = 13<br>
-        x + 2y + z + w = 14<br>
-        x + y + 2z + w = 15
-    </div>
+<div class="box">
+Tempatkan sistem persamaan linear di sini.
+</div>
 
-    <h2>2. Matriks Augmented</h2>
+<h2>2. Matriks Augmented</h2>
 
-    <div class="box-code">
-B = matrix([<br>
-&nbsp;&nbsp;[1, 1, 1, 1, 10],<br>
-&nbsp;&nbsp;[2, 1, 1, 1, 13],<br>
-&nbsp;&nbsp;[1, 2, 1, 1, 14],<br>
-&nbsp;&nbsp;[1, 1, 2, 1, 15]<br>
-])
-    </div>
+<div class="box">
+Tempatkan matriks augmented di sini.
+</div>
 
-    <div class="box-result">
-[ 1  1  1  1 | 10 ]<br>
-[ 2  1  1  1 | 13 ]<br>
-[ 1  2  1  1 | 14 ]<br>
-[ 1  1  2  1 | 15 ]
-    </div>
+<h2>3. Eliminasi Gauss (OBE)</h2>
 
-    <h2>3. Eliminasi Gauss</h2>
+<h3>Langkah 1: nolkan elemen di bawah pivot kolom 1</h3>
 
-    <h3>Langkah 1</h3>
-    <p>Menghilangkan elemen pada kolom pertama:</p>
+<div class="operasi">
+Operasi baris:<br><br>
+R₂ = R₂ − 2R₁
+</div>
 
-    <div class="box-code">
-B.add_multiple_of_row(1, 0, -2)<br>
-B.add_multiple_of_row(2, 0, -1)<br>
-B.add_multiple_of_row(3, 0, -1)
-    </div>
+<p><b>Penjelasan:</b></p>
 
-    <div class="box-result">
-[ 1  1  1  1 | 10 ]<br>
-[ 0 -1 -1 -1 | -7 ]<br>
-[ 0  1  0  0 | 4 ]<br>
-[ 0  0  1  0 | 5 ]
-    </div>
+<p>
+Pivot pertama ada di kolom 1 baris 1 (angka 1).
+</p>
 
-    <h3>Langkah 2</h3>
-    <p>Menghilangkan elemen pada kolom kedua:</p>
+<p>
+Di bawahnya (baris 2 kolom 1) ada angka 2.
+</p>
 
-    <div class="box-result">
-[ 1  1  1  1 | 10 ]<br>
-[ 0 -1 -1 -1 | -7 ]<br>
-[ 0  0 -1 -1 | -3 ]<br>
-[ 0  0  0 -1 | 2 ]
-    </div>
+<p>
+Kita ingin membuat elemen tersebut menjadi 0.
+</p>
 
-    <h2>4. Substitusi Balik</h2>
+<p>
+Caranya dengan mengurangkan 2 kali baris 1 dari baris 2.
+</p>
 
-    <ul>
-        <li>w = -2</li>
-        <li>z = 5</li>
-        <li>y = 4</li>
-        <li>x = 3</li>
-    </ul>
+<hr>
 
-    <footer>
-        © 2026 · Catatan Eliminasi Gaussian
-    </footer>
+<h3>Langkah 2: nolkan elemen di bawah pivot kolom 2</h3>
+
+<div class="operasi">
+Operasi baris:<br><br>
+R₃ = R₃ − 3R₂
+</div>
+
+<p><b>Penjelasan:</b></p>
+
+<p>
+Pivot kedua ada di kolom 2 baris 2 (angka 1).
+</p>
+
+<p>
+Di bawahnya (baris 3 kolom 2) ada angka 3.
+</p>
+
+<p>
+Kita membuat elemen tersebut menjadi 0 dengan mengurangkan 3 kali baris 2.
+</p>
+
+<hr>
+
+<h3>Langkah 3: nolkan elemen di bawah pivot kolom 3</h3>
+
+<div class="operasi">
+Operasi baris:<br><br>
+R₄ = R₄ − 4R₃
+</div>
+
+<p><b>Penjelasan:</b></p>
+
+<p>
+Pivot ketiga ada di kolom 3 baris 3 (angka 1).
+</p>
+
+<p>
+Di bawahnya (baris 4 kolom 3) ada angka 4.
+</p>
+
+<p>
+Elemen tersebut dinolkan dengan mengurangkan 4 kali baris 3.
+</p>
+
+<hr>
+
+<h3>Langkah 4: nolkan elemen di bawah pivot kolom 4</h3>
+
+<div class="operasi">
+Operasi baris:<br><br>
+R₅ = R₅ − 5R₄
+</div>
+
+<p><b>Penjelasan:</b></p>
+
+<p>
+Pivot keempat ada di kolom 4 baris 4 (angka 1).
+</p>
+
+<p>
+Di bawahnya (baris 5 kolom 4) ada angka 5.
+</p>
+
+<p>
+Elemen tersebut dibuat nol dengan mengurangkan 5 kali baris 4.
+</p>
+
+<hr>
+
+<h2>Hasil Akhir</h2>
+
+<div class="box">
+Masukkan hasil matriks eselon baris atau solusi akhir di sini.
+</div>
+
+<h2>SAGE CELL</h2>
+
+<div class="operasi">
+Masukkan kode SageMath di sini.
+</div>
+
+<h2>Original Image</h2>
+
+<div class="box">
+Masukkan gambar hasil Sage Cell di sini.
+</div>
+
+<h2>Kesimpulan</h2>
+
+<div class="kesimpulan">
+Eliminasi Gauss adalah metode efisien untuk menyelesaikan sistem persamaan linear (SPL) dengan mengubah matriks diperbesar menjadi bentuk eselon baris (segitiga atas) menggunakan operasi baris elementer. Proses ini diakhiri dengan substitusi balik untuk mendapatkan solusi, menjadikannya metode sistematis yang ampuh.
+</div>
 
 </div>
+
 </body>
 </html>
